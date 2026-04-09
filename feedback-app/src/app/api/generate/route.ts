@@ -98,7 +98,7 @@ export async function POST(req: NextRequest) {
           'anthropic-version': '2023-06-01',
         },
         body: JSON.stringify({
-          model: 'claude-sonnet-4-6-20250416',
+          model: 'claude-sonnet-4-5',
           max_tokens: 2000,
           messages: [{ role: 'user', content: prompt }],
         }),
@@ -118,7 +118,7 @@ export async function POST(req: NextRequest) {
       console.error('[generate] Anthropic API 오류 — status:', apiResponse.status, '| body:', errorText);
       return fail(
         '생성 중 문제가 발생했습니다. 잠시 후 다시 시도해주세요.',
-        `Anthropic status=${apiResponse.status}`,
+        `Anthropic status=${apiResponse.status} | ${errorText.slice(0, 300)}`,
         500,
       );
     }
