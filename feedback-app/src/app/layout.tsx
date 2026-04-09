@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "FeedbackFlow — AI 리뷰/피드백 어시스턴트",
+  title: "FeedbackFlow | AI 리뷰/피드백 어시스턴트",
   description: "조직 목표와 정렬된 셀프리뷰, 리더 피드백, 태도/조직 Fit 문구를 AI로 생성합니다.",
 };
 
