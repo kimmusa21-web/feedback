@@ -1,11 +1,10 @@
 export interface OnboardingData {
-  vision: string;
-  coreValues: string;
-  orgGoals: string;
-  performanceGoals: string;
-  growthGoals: string;
-  idealTalent: string;
-  groundRules: string;
+  vision: string;              // 회사 미션 or 비전 (선택)
+  orgGoals: string;            // 조직 목표 (선택)
+  performanceGoals: string;    // 성과목표 (필수)
+  growthGoals: string;         // 성장목표 (필수)
+  coreValuesOrTalent: string;  // 핵심가치 또는 인재상 (필수)
+  groundRules: string;         // 행동규범 (필수)
 }
 
 export type Mode = 'self-review' | 'leader-feedback' | 'attitude-fit';
@@ -31,4 +30,11 @@ export interface GenerateRequest {
   selfReviewInput?: SelfReviewInput;
   feedbackInput?: FeedbackInput;
   fitInput?: FitInput;
+}
+
+export interface GenerateResponse {
+  success: boolean;
+  result?: string;
+  error?: string;
+  debug?: string;
 }
